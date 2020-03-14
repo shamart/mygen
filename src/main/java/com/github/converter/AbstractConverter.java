@@ -17,23 +17,33 @@ public abstract class AbstractConverter implements Runnable {
     protected final ProjectSpec projectSpec;
 
     @SneakyThrows
-    public AbstractConverter()  {
+    public AbstractConverter() {
         ObjectMapper objectMapper = new ObjectMapper();
         URL resource = AbstractConverter.class.getResource(MODEL);
         projectSpec = objectMapper.readValue(resource, ProjectSpec.class);
     }
-
+    @SneakyThrows
+    public void transform(String fromFile,String toFile,Object dataModel) {
+        @Cleanup FileWriter writer = new FileWriter(toFile);
+        Template template = FtlConfUtil.getConf().getTemplate(fromFile);
+        template.process(dataModel, writer);
+    }
     @SneakyThrows
     @Override
     public void run() {
-        @Cleanup FileWriter writer = new FileWriter(toFile());
-        Template template = FtlConfUtil.getConf().getTemplate(fromFile());
-        template.process(dataModel(), writer);
+        transform(fromFile(),toFile(),dataModel()
+        )
     }
 
-    abstract String toFile();
+    String fromFile() {
+        throw new UnsupportedOperationException();
+    }
 
-    abstract String fromFile();
+    String toFile() {
+        throw new UnsupportedOperationException();
+    }
 
-    abstract Object dataModel();
+    Object dataModel() {
+        throw new UnsupportedOperationException();
+    }
 }
