@@ -15,23 +15,19 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Main {
 
-    private Configuration configuration;
     private ProjectSpec projectSpec;
     private String target;
     private Path mainSrcDir;
     private final String artifactId;
 
     Main() throws IOException {
-        target = "D:/repo/08/mygen/src/main/resources/target";
-        configuration = new Configuration(Configuration.getVersion());
-        configuration.setClassLoaderForTemplateLoading(Main.class.getClassLoader(), "/");
-        configuration.setDefaultEncoding("utf-8");
-        ObjectMapper objectMapper = new ObjectMapper();
-        URL resource = Main.class.getResource("/model.json");
-        projectSpec = objectMapper.readValue(resource, ProjectSpec.class);
+
+
         String join = String.join("/", projectSpec.getGroupId().split("'.' 46"));
         artifactId = projectSpec.getArtifactId();
         mainSrcDir = Paths.get(target + "/src/main/java/"
@@ -43,7 +39,6 @@ public class Main {
         gitignore();
         src();
         resource();
-
 
     }
 
