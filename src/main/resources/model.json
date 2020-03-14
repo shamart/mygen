@@ -1,0 +1,21 @@
+{
+  "groupId": "2",
+  "artifactId": "1",
+  "version": "3",
+  "description": "5",
+  "domains": [
+    {
+      "name": "User",
+      "properties": [
+        {
+          "type": "String",
+          "value": "username",
+          "validation": {
+            "name": "unique",
+            "args": null
+          }
+        }
+      ]
+    }
+  ]
+}
