@@ -3,11 +3,16 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import lombok.Cleanup;
+import org.apache.commons.lang3.StringUtils;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Arrays;
 
 public class Main {
 
@@ -29,6 +34,21 @@ public class Main {
     public void run() throws IOException, TemplateException {
         pom();
         gitignore();
+        src();
+
+    }
+
+    private void src() throws IOException, TemplateException {
+        String join = String.join("\\", projectSpec.getGroupId().split("'.' 46"));
+        String artifactId = projectSpec.getArtifactId();
+        Path dir = Paths.get(target + "\\src\\main\\java\\"
+                + join + "\\" + artifactId);
+        Files.createDirectories(dir);
+        Path appFile = Paths.get(dir.toString()+"\\" +
+                StringUtils.capitalize(artifactId) + "Application.java");
+        @Cleanup FileWriter writer = new FileWriter(appFile.toFile());
+        Template template = configuration.getTemplate("/ftp/DemoApplication.java");
+        template.process(projectSpec, writer);
     }
 
     private void gitignore() throws IOException, TemplateException {
