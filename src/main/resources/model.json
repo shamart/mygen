@@ -1,8 +1,8 @@
 {
-  "groupId": "2",
-  "artifactId": "1",
-  "version": "3",
-  "description": "5",
+  "groupId": "com.github",
+  "artifactId": "blog",
+  "version": "1.0.0",
+  "description": "simple blog",
   "domains": [
     {
       "name": "User",
@@ -10,6 +10,23 @@
         {
           "type": "String",
           "value": "username",
+          "validation": {
+            "name": "unique",
+            "args": null
+          }
+        },
+        {
+          "type": "String",
+          "value": "password"
+        }
+      ]
+    },
+    {
+      "name": "Catalog",
+      "properties": [
+        {
+          "type": "String",
+          "value": "name",
           "validation": {
             "name": "unique",
             "args": null
