@@ -1,11 +1,16 @@
+package com.github.spec;
+
+import com.github.spec.DomainField;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class DomainFieldValidation {
+public class DomainSpec {
     private String name;
-    private String[] args;
- }
+    private List<DomainField> properties;
+}

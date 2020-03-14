@@ -1,3 +1,5 @@
+package com.github.spec;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
