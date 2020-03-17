@@ -3,17 +3,7 @@ package com.github.converter;
 public class GitignoreConverter extends AbstractConverter {
 
     @Override
-    String fromFile() {
-        return "/ftp/.gitignore";
-    }
+    public void converte() {
 
-    @Override
-    String toFile() {
-        return TARGET + "/.gitignore";
-    }
-
-    @Override
-    Object dataModel() {
-        return projectSpec;
     }
 }
