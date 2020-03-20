@@ -13,7 +13,8 @@ public class Main {
                 new ConfigConverter(),
                 new HandlerConverter(),
                 new DTOConverter(),
-                new ControllerConverter()
+                new ControllerConverter(),
+                new SpringApplicationConverter()
         };
 
         for (AbstractConverter converter : abstractConverters) {

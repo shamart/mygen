@@ -33,6 +33,44 @@
           }
         }
       ]
+    },
+    {
+      "name": "Tag",
+      "properties": [
+        {
+          "type": "String",
+          "value": "name",
+          "validation": {
+            "name": "unique",
+            "args": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Post",
+      "properties": [
+        {
+          "type": "String",
+          "value": "title",
+          "validation": {
+            "name": "unique",
+            "args": null
+          }
+        },
+        {
+          "type": "String",
+          "value": "content",
+          "validation": {
+            "name": "unique",
+            "args": null
+          }
+        },
+        {
+          "type": "Date",
+          "value": "createTime"
+        }
+      ]
     }
   ]
 }
