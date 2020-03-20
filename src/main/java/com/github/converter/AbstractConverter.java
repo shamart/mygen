@@ -40,6 +40,10 @@ public abstract class AbstractConverter {
         }
         String fileName = TARGET_PATH + toFile;
         Path path = Paths.get(fileName);
+        Path parent = path.getParent();
+        if (!Files.exists(path)) {
+            Files.createDirectories(parent);
+        }
         if (!Files.exists(path)) {
             Files.createFile(path);
         }

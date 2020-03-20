@@ -1,13 +1,13 @@
-import com.github.converter.AbstractConverter;
-import com.github.converter.GitignoreConverter;
-import com.github.converter.PomConverter;
+import com.github.converter.*;
 
 public class Main {
 
     public static void main(String[] args) {
         AbstractConverter[] abstractConverters = new AbstractConverter[]{
                 new PomConverter(),
-                new GitignoreConverter()
+                new GitignoreConverter(),
+                new ApplicationPropertiesConverter(),
+                new DomainConverter()
         };
 
         for (AbstractConverter converter : abstractConverters) {
