@@ -10,7 +10,9 @@ public class Main {
                 new DomainConverter(),
                 new RepositoryConverter(),
                 new ServiceConverter(),
-                new ConfigConverter()
+                new ConfigConverter(),
+                new HandlerConverter(),
+                new DTOConverter()
         };
 
         for (AbstractConverter converter : abstractConverters) {
