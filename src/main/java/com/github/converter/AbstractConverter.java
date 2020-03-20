@@ -16,9 +16,9 @@ import java.nio.file.Paths;
 
 public abstract class AbstractConverter {
 
-    protected static final String SOURCE_PATH = "D:/repo/08/demo/";
-    protected static final String TARGET_PATH = "D:/repo/08/demo1/";
-    protected static final String SPEC_JSON_FILE = "D:/repo/08/mygen/src/main/resources/model.json";
+    protected static final String SOURCE_PATH = "E:/repo/demo/";
+    protected static final String TARGET_PATH = "E:/repo/demo1/";
+    protected static final String SPEC_JSON_FILE = "E:/mygen/src/main/resources/model.json";
     protected final ProjectSpec projectSpec;
     private final Configuration configuration;
 

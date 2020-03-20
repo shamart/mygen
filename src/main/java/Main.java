@@ -7,7 +7,8 @@ public class Main {
                 new PomConverter(),
                 new GitignoreConverter(),
                 new ApplicationPropertiesConverter(),
-                new DomainConverter()
+                new DomainConverter(),
+                new RepositoryConverter()
         };
 
         for (AbstractConverter converter : abstractConverters) {
