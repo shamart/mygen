@@ -12,7 +12,8 @@ public class Main {
                 new ServiceConverter(),
                 new ConfigConverter(),
                 new HandlerConverter(),
-                new DTOConverter()
+                new DTOConverter(),
+                new ControllerConverter()
         };
 
         for (AbstractConverter converter : abstractConverters) {
