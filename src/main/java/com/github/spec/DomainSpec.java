@@ -1,6 +1,5 @@
 package com.github.spec;
 
-import com.github.spec.DomainField;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

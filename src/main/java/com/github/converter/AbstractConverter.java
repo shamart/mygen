@@ -21,6 +21,8 @@ public abstract class AbstractConverter {
     protected static final String SPEC_JSON_FILE = "E:/mygen/src/main/resources/model.json";
     protected final ProjectSpec projectSpec;
     private final Configuration configuration;
+    protected final String packageSubPath;
+
 
     @SneakyThrows
     public AbstractConverter() {
@@ -30,6 +32,10 @@ public abstract class AbstractConverter {
         FileTemplateLoader fileTemplateLoader = new FileTemplateLoader(new File(SOURCE_PATH));
         configuration.setTemplateLoader(fileTemplateLoader);
         configuration.setDefaultEncoding("utf-8");
+        String groupId = projectSpec.getGroupId();
+        String[] split = groupId.split("\\.");
+        String collect = String.join("/", split);
+        packageSubPath = collect + "/" + projectSpec.getArtifactId();
     }
 
     @SneakyThrows
@@ -67,6 +73,6 @@ public abstract class AbstractConverter {
         Files.copy(path1, path);
     }
 
-    public abstract void converte();
+    public abstract void convert();
 
 }

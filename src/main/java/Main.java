@@ -8,11 +8,13 @@ public class Main {
                 new GitignoreConverter(),
                 new ApplicationPropertiesConverter(),
                 new DomainConverter(),
-                new RepositoryConverter()
+                new RepositoryConverter(),
+                new ServiceConverter(),
+                new ConfigConverter()
         };
 
         for (AbstractConverter converter : abstractConverters) {
-            converter.converte();
+            converter.convert();
         }
     }
 }
