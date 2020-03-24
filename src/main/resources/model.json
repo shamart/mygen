@@ -22,6 +22,66 @@
       ]
     },
     {
+      "name": "UserRolePivot",
+      "properties": [
+        {
+          "type": "Long",
+          "value": "userId"
+        },
+        {
+          "type": "Long",
+          "value": "roleId"
+        }
+      ]
+    },
+    {
+      "name": "Role",
+      "properties": [
+        {
+          "type": "String",
+          "value": "name",
+          "validation": {
+            "name": "unique",
+            "args": null
+          }
+        },
+        {
+          "type": "String",
+          "value": "remark"
+        }
+      ]
+    },
+    {
+      "name": "RoleAuthorityPivot",
+      "properties": [
+        {
+          "type": "Long",
+          "value": "roleId"
+        },
+        {
+          "type": "Long",
+          "value": "authorityId"
+        }
+      ]
+    },
+    {
+      "name": "Authority",
+      "properties": [
+        {
+          "type": "String",
+          "value": "name",
+          "validation": {
+            "name": "unique",
+            "args": null
+          }
+        },
+        {
+          "type": "String",
+          "value": "remark"
+        }
+      ]
+    },
+    {
       "name": "Catalog",
       "properties": [
         {
