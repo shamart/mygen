@@ -3,6 +3,7 @@ package com.github.model;
 import com.github.spec.DomainField;
 import com.github.spec.DomainSpec;
 import com.github.spec.ProjectSpec;
+import com.github.utils.Class2FinalField;
 import com.github.utils.Inflector;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,6 +21,7 @@ public class DomainFileModel {
     private String description;
 
     private Inflector pluralize=new Inflector();
+    private Class2FinalField class2FinalField = new Class2FinalField();
 
     //domain
     private String domainName;
