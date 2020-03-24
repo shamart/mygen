@@ -10,10 +10,10 @@
         {
           "type": "String",
           "value": "username",
-          "validation": {
+          "validations": [{
             "name": "unique",
             "args": null
-          }
+          }]
         },
         {
           "type": "String",
@@ -40,10 +40,10 @@
         {
           "type": "String",
           "value": "name",
-          "validation": {
+          "validations":[ {
             "name": "unique",
             "args": null
-          }
+          }]
         },
         {
           "type": "String",
@@ -70,10 +70,10 @@
         {
           "type": "String",
           "value": "name",
-          "validation": {
+          "validations": [{
             "name": "unique",
             "args": null
-          }
+          }]
         },
         {
           "type": "String",
@@ -87,10 +87,10 @@
         {
           "type": "String",
           "value": "name",
-          "validation": {
+          "validations": [{
             "name": "unique",
             "args": null
-          }
+          }]
         }
       ]
     },
@@ -100,10 +100,10 @@
         {
           "type": "String",
           "value": "name",
-          "validation": {
+          "validations": [{
             "name": "unique",
             "args": null
-          }
+          }]
         }
       ]
     },
@@ -113,18 +113,18 @@
         {
           "type": "String",
           "value": "title",
-          "validation": {
+          "validations": [{
             "name": "unique",
             "args": null
-          }
+          }]
         },
         {
           "type": "String",
           "value": "content",
-          "validation": {
+          "validations":[ {
             "name": "unique",
             "args": null
-          }
+          }]
         },
         {
           "type": "Date",
