@@ -28,7 +28,7 @@ public abstract class AbstractConverter {
     public AbstractConverter() {
         ObjectMapper objectMapper = new ObjectMapper();
         projectSpec = objectMapper.readValue(new File(SPEC_JSON_FILE), ProjectSpec.class);
-        configuration = new Configuration(Configuration.getVersion());
+        configuration = new Configuration(Configuration.VERSION_2_3_30);
         FileTemplateLoader fileTemplateLoader = new FileTemplateLoader(new File(SOURCE_PATH));
         configuration.setTemplateLoader(fileTemplateLoader);
         configuration.setDefaultEncoding("utf-8");
